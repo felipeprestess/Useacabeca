@@ -22,8 +22,7 @@ namespace ProgramaDeBanco
             else
             {
                 MessageBox.Show(
-                    "I don't have enough cash to give you " + amount,
-                    Name + " says ...");
+                    "I don't have enough cash to give you " + amount, Name + " says...");
                 return 0;
             }
         }
@@ -37,10 +36,9 @@ namespace ProgramaDeBanco
             }
             else
             {
-                MessageBox.Show(amount + "isn't an amount I'll take", Name + " says ...");
+                MessageBox.Show(amount + "isn't an amount I'll take", Name + " says...");
                 return 0;
             }
         }
-
     }
 }
