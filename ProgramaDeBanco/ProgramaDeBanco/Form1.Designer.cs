@@ -33,6 +33,8 @@
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.bank = new System.Windows.Forms.Label();
+            this.joeGiveToBob = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // labelJoeCash
@@ -82,11 +84,33 @@
             this.bank.TabIndex = 4;
             this.bank.Text = "The bank has $100";
             // 
+            // joeGiveToBob
+            // 
+            this.joeGiveToBob.Location = new System.Drawing.Point(25, 197);
+            this.joeGiveToBob.Name = "joeGiveToBob";
+            this.joeGiveToBob.Size = new System.Drawing.Size(88, 39);
+            this.joeGiveToBob.TabIndex = 5;
+            this.joeGiveToBob.Text = "Joe gives $10 to Bob";
+            this.joeGiveToBob.UseVisualStyleBackColor = true;
+            this.joeGiveToBob.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(123, 197);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(83, 38);
+            this.button4.TabIndex = 6;
+            this.button4.Text = "Bob gives $5 to Joe";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 261);
+            this.ClientSize = new System.Drawing.Size(237, 260);
+            this.Controls.Add(this.button4);
+            this.Controls.Add(this.joeGiveToBob);
             this.Controls.Add(this.bank);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
@@ -109,6 +133,8 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label bank;
+        private System.Windows.Forms.Button joeGiveToBob;
+        private System.Windows.Forms.Button button4;
     }
 }
 

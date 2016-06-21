@@ -54,5 +54,17 @@ namespace ProgramaDeBanco
             banco += bob.GiveCash(5);
             UpdateForm(); 
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            joe.GiveCash(bob.ReceiveCash(10));
+            UpdateForm();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            bob.GiveCash(joe.ReceiveCash(5));
+            UpdateForm();
+        }
     }
 }
