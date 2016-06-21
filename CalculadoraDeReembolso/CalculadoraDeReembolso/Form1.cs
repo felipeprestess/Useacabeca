@@ -14,6 +14,9 @@ namespace CalculadoraDeReembolso
     {
         int startingMileage;
         int endingMileage;
+        double milesTraveled;
+        double reimburseRate = .39;
+        double amountOwed;
         public Form1()
         {
             InitializeComponent();
@@ -27,6 +30,18 @@ namespace CalculadoraDeReembolso
         private void label4_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (contagemInicia.Value < contagemTermina.Value)
+            {
+
+            }
+            else
+            {
+                MessageBox.Show("A quilometragem inicial deve ser menor que a contagem final","Impossível Calcular");
+            }
         }
     }
 }

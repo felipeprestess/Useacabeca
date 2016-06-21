@@ -30,13 +30,13 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
+            this.contagemInicia = new System.Windows.Forms.NumericUpDown();
+            this.contagemTermina = new System.Windows.Forms.NumericUpDown();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.contagemInicia)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.contagemTermina)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -57,45 +57,45 @@
             this.label2.TabIndex = 1;
             this.label2.Text = "Ending Mileage";
             // 
-            // numericUpDown1
+            // contagemInicia
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(102, 19);
-            this.numericUpDown1.Maximum = new decimal(new int[] {
+            this.contagemInicia.Location = new System.Drawing.Point(102, 19);
+            this.contagemInicia.Maximum = new decimal(new int[] {
             999999,
             0,
             0,
             0});
-            this.numericUpDown1.Minimum = new decimal(new int[] {
+            this.contagemInicia.Minimum = new decimal(new int[] {
             1,
             0,
             0,
             0});
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(120, 20);
-            this.numericUpDown1.TabIndex = 2;
-            this.numericUpDown1.Value = new decimal(new int[] {
+            this.contagemInicia.Name = "contagemInicia";
+            this.contagemInicia.Size = new System.Drawing.Size(120, 20);
+            this.contagemInicia.TabIndex = 2;
+            this.contagemInicia.Value = new decimal(new int[] {
             1,
             0,
             0,
             0});
             // 
-            // numericUpDown2
+            // contagemTermina
             // 
-            this.numericUpDown2.Location = new System.Drawing.Point(102, 46);
-            this.numericUpDown2.Maximum = new decimal(new int[] {
+            this.contagemTermina.Location = new System.Drawing.Point(102, 46);
+            this.contagemTermina.Maximum = new decimal(new int[] {
             999999,
             0,
             0,
             0});
-            this.numericUpDown2.Minimum = new decimal(new int[] {
+            this.contagemTermina.Minimum = new decimal(new int[] {
             1,
             0,
             0,
             0});
-            this.numericUpDown2.Name = "numericUpDown2";
-            this.numericUpDown2.Size = new System.Drawing.Size(120, 20);
-            this.numericUpDown2.TabIndex = 3;
-            this.numericUpDown2.Value = new decimal(new int[] {
+            this.contagemTermina.Name = "contagemTermina";
+            this.contagemTermina.Size = new System.Drawing.Size(120, 20);
+            this.contagemTermina.TabIndex = 3;
+            this.contagemTermina.Value = new decimal(new int[] {
             1,
             0,
             0,
@@ -130,6 +130,7 @@
             this.button1.TabIndex = 6;
             this.button1.Text = "Calculate";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // Form1
             // 
@@ -139,16 +140,16 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.numericUpDown2);
-            this.Controls.Add(this.numericUpDown1);
+            this.Controls.Add(this.contagemTermina);
+            this.Controls.Add(this.contagemInicia);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Form1";
             this.Text = "Mileage Calculator";
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.contagemInicia)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.contagemTermina)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -158,8 +159,8 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
-        private System.Windows.Forms.NumericUpDown numericUpDown2;
+        private System.Windows.Forms.NumericUpDown contagemInicia;
+        private System.Windows.Forms.NumericUpDown contagemTermina;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button button1;
