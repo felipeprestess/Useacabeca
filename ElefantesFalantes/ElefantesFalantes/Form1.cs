@@ -42,7 +42,14 @@ namespace ElefantesFalantes
             arm = lloyd;
             lloyd = lucinda;
             lucinda = arm;
+            MessageBox.Show("Objetos trocados!");
+        }
 
+        private void button4_Click(object sender, EventArgs e)
+        {
+            lloyd = lucinda;
+            lloyd.EarSize = 4321;
+            lloyd.WhoIAm();
         }
     }
 }
