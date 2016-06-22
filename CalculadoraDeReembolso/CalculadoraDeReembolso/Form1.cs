@@ -36,7 +36,11 @@ namespace CalculadoraDeReembolso
         {
             if (contagemInicia.Value < contagemTermina.Value)
             {
-
+                startingMileage = (int)contagemInicia.Value;
+                endingMileage = (int)contagemTermina.Value;
+                milesTraveled = endingMileage -= startingMileage;
+                amountOwed = milesTraveled *= reimburseRate;
+                label4.Text = "$" + amountOwed;
             }
             else
             {
