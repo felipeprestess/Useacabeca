@@ -8,7 +8,25 @@ namespace UmJantar
 {
     class DinnerParty
     {
-        public int NumberOfPeople;
+        private int numberOfPeople;
+        public int NumberOfPeople {
+            get{ return numberOfPeople; }
+            set
+            {
+                numberOfPeople = value;
+                CalculateCostOfDecorations(fancyOption);
+            }
+        }
+
+        private bool fancyOption;
+        /*CONSTRUCTOR*/
+        public DinnerParty(int numberOfPeople, bool HealthyOption, bool FancyOption)
+        {
+            NumberOfPeople = numberOfPeople;
+            this.fancyOption = FancyOption;
+            SetHealthyOption(HealthyOption);
+            CalculateCostOfDecorations(fancyOption);
+        }
         public decimal CostOfBeveragesPerPerson;
         public const int CostOfFoodPerPerson = 25;
         public decimal CostOfDecorations = 0;
