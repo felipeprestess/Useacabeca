@@ -17,8 +17,9 @@ namespace UmJantar
         {
             InitializeComponent();
             dinnerParty = new DinnerParty() { NumberOfPeople = 5 };
-            dinnerParty.SetHealthyOption(false);
-            dinnerParty.CalculateCostOfDecorations(true);
+            dinnerParty.CalculateCostOfDecorations(checkBox1.Checked);
+            dinnerParty.SetHealthyOption(checkBox2.Checked);
+            
             DisplayDinnerPartyCost();
         }
 
@@ -36,12 +37,14 @@ namespace UmJantar
         private void numericUpDown1_ValueChanged(object sender, EventArgs e)
         {
             dinnerParty.NumberOfPeople = (int)numericUpDown1.Value;
+            dinnerParty.CalculateCostOfDecorations(checkBox1.Checked);
             DisplayDinnerPartyCost();
         }
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
             dinnerParty.CalculateCostOfDecorations(checkBox1.Checked);
+            
             DisplayDinnerPartyCost();
         }
 

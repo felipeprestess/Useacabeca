@@ -11,35 +11,46 @@ namespace UmJantar
         public int NumberOfPeople;
         public decimal CostOfBeveragesPerPerson;
         public const int CostOfFoodPerPerson = 25;
-        public decimal CostOfDecorations;
+        public decimal CostOfDecorations = 0;
 
         public void SetHealthyOption(bool option)
         {
-            option = true;
             if (option)
-                CostOfBeveragesPerPerson = 5;
+            {
+                CostOfBeveragesPerPerson = 5.00M;
+            }
             else
-                CostOfBeveragesPerPerson = 20;
+            {
+                CostOfBeveragesPerPerson = 20.00M;
+            }
+                
         }
 
         public void CalculateCostOfDecorations(bool optionFancy)
         {
-            optionFancy = true;
             if (optionFancy)
+            {
                 CostOfDecorations = (15.00M * NumberOfPeople) + 50M;
+            }
             else
+            {
                 CostOfDecorations = (7.50M * NumberOfPeople) + 30M;
-
+            }
+                
         }
 
         public decimal CalculateCost(bool option)
         {
-            option = true;
-            decimal total = CostOfDecorations + CostOfBeveragesPerPerson + (NumberOfPeople * CostOfFoodPerPerson);
+            decimal total = CostOfDecorations  + ((CostOfBeveragesPerPerson + CostOfFoodPerPerson) * NumberOfPeople);
             if (option)
+            {
                 return total * .95M;
+            }
             else
+            {
                 return total;
+            }
+                
             
         }
     }
