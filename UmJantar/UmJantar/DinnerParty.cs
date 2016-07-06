@@ -8,6 +8,8 @@ namespace UmJantar
 {
     class DinnerParty
     {
+        public const int CostOfFoodPerPerson = 25;
+        private bool fancyOption;
         private int numberOfPeople;
         public int NumberOfPeople {
             get{ return numberOfPeople; }
@@ -18,18 +20,18 @@ namespace UmJantar
             }
         }
 
-        private bool fancyOption;
+       
         /*CONSTRUCTOR*/
-        public DinnerParty(int numberOfPeople, bool HealthyOption, bool FancyOption)
+        public DinnerParty(int numberOfPeople, bool OpcaoSaudavel, bool OpcaoChique)
         {
             NumberOfPeople = numberOfPeople;
-            this.fancyOption = FancyOption;
-            SetHealthyOption(HealthyOption);
+            this.fancyOption = OpcaoChique;
+            SetHealthyOption(OpcaoSaudavel);
             CalculateCostOfDecorations(fancyOption);
         }
-        public decimal CostOfBeveragesPerPerson;
-        public const int CostOfFoodPerPerson = 25;
-        public decimal CostOfDecorations = 0;
+        public decimal CostOfBeveragesPerPerson = 0.00M;
+        
+        public decimal CostOfDecorations = 0.00M;
 
         public void SetHealthyOption(bool option)
         {
@@ -37,6 +39,7 @@ namespace UmJantar
             {
                 CostOfBeveragesPerPerson = 5.00M;
             }
+
             else
             {
                 CostOfBeveragesPerPerson = 20.00M;
@@ -44,9 +47,10 @@ namespace UmJantar
                 
         }
 
-        public void CalculateCostOfDecorations(bool optionFancy)
+        public void CalculateCostOfDecorations(bool OpcaoChique)
         {
-            if (optionFancy)
+            fancyOption = OpcaoChique;
+            if (OpcaoChique)
             {
                 CostOfDecorations = (15.00M * NumberOfPeople) + 50M;
             }

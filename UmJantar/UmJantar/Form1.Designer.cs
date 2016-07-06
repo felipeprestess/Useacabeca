@@ -30,8 +30,8 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
+            this.opcaoChique = new System.Windows.Forms.CheckBox();
+            this.opcaoSaudavel = new System.Windows.Forms.CheckBox();
             this.label2 = new System.Windows.Forms.Label();
             this.costLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
@@ -69,29 +69,29 @@
             0});
             this.numericUpDown1.ValueChanged += new System.EventHandler(this.numericUpDown1_ValueChanged);
             // 
-            // checkBox1
+            // opcaoChique
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Checked = true;
-            this.checkBox1.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBox1.Location = new System.Drawing.Point(17, 54);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(115, 17);
-            this.checkBox1.TabIndex = 2;
-            this.checkBox1.Text = "Fancy Decorations";
-            this.checkBox1.UseVisualStyleBackColor = true;
-            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            this.opcaoChique.AutoSize = true;
+            this.opcaoChique.Checked = true;
+            this.opcaoChique.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.opcaoChique.Location = new System.Drawing.Point(17, 54);
+            this.opcaoChique.Name = "opcaoChique";
+            this.opcaoChique.Size = new System.Drawing.Size(115, 17);
+            this.opcaoChique.TabIndex = 2;
+            this.opcaoChique.Text = "Fancy Decorations";
+            this.opcaoChique.UseVisualStyleBackColor = true;
+            this.opcaoChique.CheckedChanged += new System.EventHandler(this.opcaoChique_CheckedChanged);
             // 
-            // checkBox2
+            // opcaoSaudavel
             // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(17, 77);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(96, 17);
-            this.checkBox2.TabIndex = 3;
-            this.checkBox2.Text = "Healthy Option";
-            this.checkBox2.UseVisualStyleBackColor = true;
-            this.checkBox2.CheckedChanged += new System.EventHandler(this.checkBox2_CheckedChanged);
+            this.opcaoSaudavel.AutoSize = true;
+            this.opcaoSaudavel.Location = new System.Drawing.Point(17, 77);
+            this.opcaoSaudavel.Name = "opcaoSaudavel";
+            this.opcaoSaudavel.Size = new System.Drawing.Size(96, 17);
+            this.opcaoSaudavel.TabIndex = 3;
+            this.opcaoSaudavel.Text = "Healthy Option";
+            this.opcaoSaudavel.UseVisualStyleBackColor = true;
+            this.opcaoSaudavel.CheckedChanged += new System.EventHandler(this.opcaoSaudavel_CheckedChanged);
             // 
             // label2
             // 
@@ -118,8 +118,8 @@
             this.ClientSize = new System.Drawing.Size(143, 157);
             this.Controls.Add(this.costLabel);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.checkBox2);
-            this.Controls.Add(this.checkBox1);
+            this.Controls.Add(this.opcaoSaudavel);
+            this.Controls.Add(this.opcaoChique);
             this.Controls.Add(this.numericUpDown1);
             this.Controls.Add(this.label1);
             this.MaximizeBox = false;
@@ -137,8 +137,8 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.NumericUpDown numericUpDown1;
-        private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.CheckBox checkBox2;
+        private System.Windows.Forms.CheckBox opcaoChique;
+        private System.Windows.Forms.CheckBox opcaoSaudavel;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label costLabel;
     }

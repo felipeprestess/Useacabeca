@@ -16,39 +16,42 @@ namespace UmJantar
         public Form1()
         {
             InitializeComponent();
-            dinnerParty = new DinnerParty((int)numericUpDown1.Value,checkBox1.Checked, checkBox2.Checked);
+            dinnerParty = new DinnerParty((int)numericUpDown1.Value,
+                                 opcaoSaudavel.Checked, opcaoChique.Checked);
             DisplayDinnerPartyCost();
         }
 
         public void DisplayDinnerPartyCost()
         {
-            decimal cost = dinnerParty.CalculateCost(checkBox2.Checked );
+            dinnerParty.CalculateCostOfDecorations(opcaoChique.Checked);
+            decimal cost = dinnerParty.CalculateCost(opcaoSaudavel.Checked);
             costLabel.Text = cost.ToString("c");
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            dinnerParty.CalculateCostOfDecorations(opcaoChique.Checked);
+            DisplayDinnerPartyCost();
         }
 
         private void numericUpDown1_ValueChanged(object sender, EventArgs e)
         {
             dinnerParty.NumberOfPeople = (int)numericUpDown1.Value;
-            dinnerParty.CalculateCostOfDecorations(checkBox1.Checked);
-            dinnerParty.CalculateCost(checkBox1.Checked);
+            dinnerParty.CalculateCostOfDecorations(opcaoChique.Checked);
+            dinnerParty.CalculateCost(opcaoChique.Checked);
             DisplayDinnerPartyCost();
         }
 
-        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        private void opcaoChique_CheckedChanged(object sender, EventArgs e)
         {
-            dinnerParty.CalculateCostOfDecorations(checkBox1.Checked);
+            dinnerParty.CalculateCostOfDecorations(opcaoChique.Checked);
             
             DisplayDinnerPartyCost();
         }
 
-        private void checkBox2_CheckedChanged(object sender, EventArgs e)
+        private void opcaoSaudavel_CheckedChanged(object sender, EventArgs e)
         {
-            dinnerParty.SetHealthyOption(checkBox2.Checked);
+            dinnerParty.SetHealthyOption(opcaoSaudavel.Checked);
             DisplayDinnerPartyCost();
         }
     }
