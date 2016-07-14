@@ -243,9 +243,9 @@
             // 
             // birthdayCost
             // 
-            this.birthdayCost.Location = new System.Drawing.Point(46, 140);
+            this.birthdayCost.Location = new System.Drawing.Point(46, 145);
             this.birthdayCost.Name = "birthdayCost";
-            this.birthdayCost.Size = new System.Drawing.Size(88, 23);
+            this.birthdayCost.Size = new System.Drawing.Size(88, 18);
             this.birthdayCost.TabIndex = 6;
             // 
             // Form1
