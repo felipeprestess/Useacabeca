@@ -7,20 +7,16 @@ using System.Windows.Forms;
 
 namespace UmJantar
 {
-    class BirthdayParty
+    class BirthdayParty : Party
     {
-        public const int CostOfFoodPerPerson = 25;
-        private int numberOfPeople;
-        public decimal CostOfDecorations = 0;
-        private bool fancyDecorations;
+
         public int CakeSize;
 
-        public int NumberOfPeople {
-            get { return numberOfPeople; }
+        public override int NumberOfPeople {
+            get { return base.NumberOfPeople; }
             set
             {
-                numberOfPeople = value;
-                CalculateCostOfDecorations(fancyDecorations);
+                base.NumberOfPeople = value;
                 CalculateCakeSize();
                 this.CakeWriting = cakeWriting;
             }
@@ -48,15 +44,18 @@ namespace UmJantar
                 this.cakeWriting = value;
             }
         }
+
+
         public BirthdayParty(int numberOfPeople, bool fancyDecorations, string cakeWriting)
+            :base(numberOfPeople, fancyDecorations)
         {
-            this.numberOfPeople = numberOfPeople;
-            this.fancyDecorations = fancyDecorations;
             CalculateCakeSize();
             this.CakeWriting = cakeWriting;
             CalculateCostOfDecorations(fancyDecorations);
         }
 
+
+        //Calcula o tamanho do bolo baseado na quantidade de pessoas
         private void CalculateCakeSize()
         {
             if (NumberOfPeople <= 4)
@@ -65,26 +64,19 @@ namespace UmJantar
                 CakeSize = 4;
         }
 
-        public decimal CalculateCost()
+        //Calcula o custo total baseado no tamanho do bolo, somando as letras acrescentadas
+        public override decimal CalculateCost()
         {
-            decimal TotalCost = CostOfDecorations + (CostOfFoodPerPerson * NumberOfPeople);
             decimal CakeCost;
 
             if (CakeSize == 8)
                 CakeCost = 40M + CakeWriting.Length * .25M;
             else
                 CakeCost = 75M + CakeWriting.Length * .25M;
-            return TotalCost + CakeCost;
+            return base.CalculateCost() + CakeCost;
         }
 
-        public void CalculateCostOfDecorations(bool fancy)
-        {
-            fancyDecorations = fancy;
-            if (fancy)
-                CostOfDecorations = (NumberOfPeople * 15.00M) + 50M;
-            else
-                CostOfDecorations = (NumberOfPeople * 7.50M) + 30M;
-        }
+        
 
         
     }
