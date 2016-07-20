@@ -31,7 +31,7 @@ namespace GerenciamentoDeAbelha
             for (int i = 0; i < workers.Length; i++)
             {
                 if (workers[i].WorkOneShift())
-                    report += "Worker #" + (i + 1) + "finished the job\r\n";
+                    report += "Worker #" + (i + 1) + " finished the job\r\n";
                 if (String.IsNullOrEmpty(workers[i].CurrentJob))
                     report += "Worker #" + (i + 1) + " is not working\r\n";
                 else
