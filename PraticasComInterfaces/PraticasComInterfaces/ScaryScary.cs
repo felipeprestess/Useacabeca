@@ -26,7 +26,7 @@ namespace PraticasComInterfaces
 
         public void ScareLittleChildren()
         {
-            MessageBox.Show("Boo! Gotcha");
+            MessageBox.Show("You can't have my " + base.FunnyThingIHave);
         }
     }
 }

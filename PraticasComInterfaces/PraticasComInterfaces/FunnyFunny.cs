@@ -16,10 +16,7 @@ namespace PraticasComInterfaces
         }
 
         public string FunnyThingIHave {
-            get
-            {
-                return "Honk Honk! I have a " + funnyThingIHave;
-            }
+            get{ return "Honk Honk! I have a " + funnyThingIHave;}
         }
 
         public void Honk()
