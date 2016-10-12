@@ -30,6 +30,7 @@ namespace JogoDeDigitacao
                 listBox1.Items.Clear();
                 listBox1.Items.Add("Game over");
                 timer1.Stop();
+                btnRestart.Visible = true;
             }
         }
 
@@ -40,26 +41,28 @@ namespace JogoDeDigitacao
                 listBox1.Items.Remove(e.KeyCode);
                 listBox1.Refresh();
                 if (timer1.Interval > 400)
-                    timer1.Interval -= 20;
+                    timer1.Interval -= 70;
                 else if (timer1.Interval > 250)
-                    timer1.Interval -= 14;
+                    timer1.Interval -= 20;
                 else if (timer1.Interval > 100)
                     timer1.Interval -= 8;
 
                 difficultyProgressBar.Value = 800 - timer1.Interval;
- 
-
                 stats.Update(true);
 
             }
             else
-            {
                 stats.Update(false);
-            }
+
             accuracyLabel.Text = "Accuracy: " + stats.Accuracy + "%";
             correctLabel.Text = "Correct: " + stats.Correct;
             missedLabel.Text = "Missed: " + stats.Missed;
             totalLabel.Text = "Total: " + stats.Total;
+        }
+
+        private void btnRestart_Click(object sender, EventArgs e)
+        {
+            Application.Restart();
         }
     }
 }
