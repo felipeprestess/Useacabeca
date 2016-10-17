@@ -16,32 +16,25 @@ namespace GerenciamentoDeAbelha
         {
             InitializeComponent();
             Worker[] workers = new Worker[4];
-            workers[0] = new Worker(new string[] { "Nectar collector", "Honey manufacturing" });
-            workers[1] = new Worker(new string[] { "Egg care", "Baby bee tutoring" });
+            workers[0] = new Worker(new string[] { "Nectar colletor", "Honney manufacturing"});
+            workers[1] = new Worker(new string[] { "Egg Care", "Baby bee tutoring" });
             workers[2] = new Worker(new string[] { "Hive maintenance", "Sting patrol" });
-            workers[3] = new Worker(new string[] { "Nectar collector","Honey manufacturing",
-                "Egg care", "Baby bee tutoring", "Hive maintenance"});
+            workers[3] = new Worker(new string[] { "Nectar colletor", "Honney manufacturing",
+                "Egg care", "Baby bee tutoring", "Hive maintenance", "Sting patrol" });
             queen = new Queen(workers);
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void proxTurno_Click(object sender, EventArgs e)
         {
-            
+            relatorio.Text = queen.WorkTheNextShift();
         }
 
         private void assignJob_Click(object sender, EventArgs e)
         {
-            if(queen.AssingWork(workerBeeJob.Text,(int)shifts.Value) == false)
-                MessageBox.Show("No workers are available to do the job '" 
-                    + workerBeeJob.Text + "' ","The Queen bee says...");
+            if(queen.AssignWork(workerBeeJob.Text, (int)turnos.Value) == false)
+                MessageBox.Show("No workers are available to do the job '" + workerBeeJob.Text + "'", "The Queen says...");
             else
-                MessageBox.Show("The job '" + workerBeeJob.Text + "' will be done in " 
-                    + shifts.Value + " shifts", "The Queen bee says...");
-        }
-
-        private void nextShift_Click(object sender, EventArgs e)
-        {
-            report.Text = queen.WorkTheNextShift();
+                MessageBox.Show("The job '" + workerBeeJob.Text + "' will be done in " + turnos.Value + " shifts", "The Queen says..."); 
         }
     }
 }
