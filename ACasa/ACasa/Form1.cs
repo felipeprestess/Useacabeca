@@ -15,24 +15,16 @@ namespace ACasa
         Location currentLocation;
 
         Room dinningRoom;
-        RoomWithDoor kitchen;
-        RoomWithDoor livingRoom;
+        RoomWithDoor livingRoom, kitchen;
 
         Outside garden;
-        OutsideWithDoor frontYard;
-        OutsideWithDoor backYard;
+        OutsideWithDoor frontYard, backYard;
 
         public Form1()
         {
             InitializeComponent();
             CreateObjects();
-            
-            
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
+            MoveToANewLocation(livingRoom);
         }
 
         private void CreateObjects()
@@ -49,6 +41,7 @@ namespace ACasa
             livingRoom.Exits = new Location[] { dinningRoom };
             kitchen.Exits = new Location[] { dinningRoom };
             frontYard.Exits = new Location[] {backYard,garden };
+            backYard.Exits = new Location[] { frontYard, garden };
             garden.Exits = new Outside[] { backYard, frontYard };
 
             livingRoom.DoorLocation = frontYard;
@@ -64,7 +57,7 @@ namespace ACasa
 
             cbxExits.Items.Clear();
             for (int i = 0; i < currentLocation.Exits.Length; i++)
-                cbxExits.Items.Add(currentLocation.Exits[i]);
+                cbxExits.Items.Add(currentLocation.Exits[i].Name);
             cbxExits.SelectedIndex = 0;
 
             txtDescription.Text = currentLocation.Description;

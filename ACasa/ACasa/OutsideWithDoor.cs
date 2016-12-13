@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ACasa2._0
+namespace ACasa
 {
     class OutsideWithDoor : Outside, IHasExteriorDoor
     {
@@ -19,7 +19,8 @@ namespace ACasa2._0
         public string DoorDescription{ get{ return doorDescription; } }
 
         private Location doorLocation;
-        public Location DoorLocation {
+        public Location DoorLocation
+        {
             get { return doorLocation; }
             set { doorLocation = value; }
         }

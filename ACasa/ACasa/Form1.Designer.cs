@@ -84,7 +84,6 @@
             this.MinimizeBox = false;
             this.Name = "Form1";
             this.Text = "Explore the House";
-            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
