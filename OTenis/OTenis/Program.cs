@@ -11,7 +11,7 @@ namespace OTenis
         static void Main(string[] args)
         {
             List<Shoe> shoeCloset = new List<Shoe>();
-
+            
 
             shoeCloset.Add(new Shoe() { Style = Style.Sneakers, Color = "Black" });
             shoeCloset.Add(new Shoe() { Style = Style.Clogs, Color = "Brown" });
