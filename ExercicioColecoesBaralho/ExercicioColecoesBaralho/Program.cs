@@ -25,7 +25,7 @@ namespace ExercicioColecoesBaralho
             cards.Sort(new CardComparer_byValue());
 
             foreach (Card card in cards)
-                Console.WriteLine(card.Name);
+                Console.WriteLine(card);
 
             Console.ReadKey();
         }
