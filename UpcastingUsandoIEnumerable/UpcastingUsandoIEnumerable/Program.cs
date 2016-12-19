@@ -30,7 +30,12 @@ namespace UpcastingUsandoIEnumerable
             foreach (Bird bird in birds)
                 Console.WriteLine(bird);
 
+            FormBotao form = new FormBotao();
+            form.ShowDialog();
+
             Console.ReadKey();
+
+
         }
     }
 }
