@@ -39,7 +39,8 @@ namespace ListaDePatos
             Ducks.Sort(comparer);
             PrintDucks(Ducks);
 
-            
+            //Duck[] duckArray = new Duck[6];
+            //duckArray.GetEnumerator
             
             Console.ReadKey();
 
