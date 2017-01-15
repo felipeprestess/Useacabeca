@@ -35,6 +35,8 @@
             this.bank = new System.Windows.Forms.Label();
             this.joeGiveToBob = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
+            this.btnSaveJoe = new System.Windows.Forms.Button();
+            this.btnLoadJoe = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // labelJoeCash
@@ -104,11 +106,33 @@
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
+            // btnSaveJoe
+            // 
+            this.btnSaveJoe.Location = new System.Drawing.Point(25, 254);
+            this.btnSaveJoe.Name = "btnSaveJoe";
+            this.btnSaveJoe.Size = new System.Drawing.Size(88, 23);
+            this.btnSaveJoe.TabIndex = 7;
+            this.btnSaveJoe.Text = "Save Joe";
+            this.btnSaveJoe.UseVisualStyleBackColor = true;
+            this.btnSaveJoe.Click += new System.EventHandler(this.btnSaveJoe_Click);
+            // 
+            // btnLoadJoe
+            // 
+            this.btnLoadJoe.Location = new System.Drawing.Point(123, 254);
+            this.btnLoadJoe.Name = "btnLoadJoe";
+            this.btnLoadJoe.Size = new System.Drawing.Size(84, 23);
+            this.btnLoadJoe.TabIndex = 8;
+            this.btnLoadJoe.Text = "Load Joe";
+            this.btnLoadJoe.UseVisualStyleBackColor = true;
+            this.btnLoadJoe.Click += new System.EventHandler(this.btnLoadJoe_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(237, 260);
+            this.ClientSize = new System.Drawing.Size(237, 289);
+            this.Controls.Add(this.btnLoadJoe);
+            this.Controls.Add(this.btnSaveJoe);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.joeGiveToBob);
             this.Controls.Add(this.bank);
@@ -135,6 +159,8 @@
         private System.Windows.Forms.Label bank;
         private System.Windows.Forms.Button joeGiveToBob;
         private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button btnSaveJoe;
+        private System.Windows.Forms.Button btnLoadJoe;
     }
 }
 
