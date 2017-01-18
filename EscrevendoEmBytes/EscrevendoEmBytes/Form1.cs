@@ -44,6 +44,7 @@ namespace EscrevendoEmBytes
 
         private void button3_Click(object sender, EventArgs e)
         {
+            //Escrevendo em hebraico
             File.WriteAllText("Eureka.txt", "שלום", Encoding.Unicode);
             byte[] eurekaBytes = File.ReadAllBytes("Eureka.txt");
 
