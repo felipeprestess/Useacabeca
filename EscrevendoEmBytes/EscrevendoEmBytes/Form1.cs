@@ -52,5 +52,7 @@ namespace EscrevendoEmBytes
                 Console.Write("{0:x2} ", b);
             Console.WriteLine();
         }
+
+     
     }
 }

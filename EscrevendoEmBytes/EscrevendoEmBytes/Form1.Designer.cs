@@ -35,7 +35,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(140, 42);
+            this.button1.Location = new System.Drawing.Point(140, 12);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(45, 38);
             this.button1.TabIndex = 0;
@@ -45,7 +45,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(140, 109);
+            this.button2.Location = new System.Drawing.Point(140, 75);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(45, 38);
             this.button2.TabIndex = 1;
@@ -55,7 +55,7 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(140, 162);
+            this.button3.Location = new System.Drawing.Point(140, 135);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(45, 36);
             this.button3.TabIndex = 2;
