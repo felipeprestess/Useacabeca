@@ -90,11 +90,24 @@ namespace SerializacaoDeBaralhos
         private void button1_Click(object sender, EventArgs e)
         {
             Deck deckToWrite = RandomDeck(5);
-            using (Stream output = File.Create("Deck1.dat"))
+            using (Stream output = File.Create("three-c.dat"))
             {
                 BinaryFormatter bf = new BinaryFormatter();
                 bf.Serialize(output, deckToWrite);
             }
+
+            using (Stream output = File.Create("six-h.dat"))
+            {
+                BinaryFormatter bf = new BinaryFormatter();
+                bf.Serialize(output, deckToWrite);
+            }
+
+            byte[] firstFile = File.ReadAllBytes("three-c.dat");
+            byte[] secondFile = File.ReadAllBytes("six-h.dat");
+
+            for (int i = 0; i < firstFile.Length; i++)
+                if (firstFile[i] != secondFile[i])
+                    Console.WriteLine("Byte #{0}: {1} versus {2}", i, firstFile[i], secondFile[i]);
             DealCards(deckToWrite, "What I just wrote to the file");
         }
 

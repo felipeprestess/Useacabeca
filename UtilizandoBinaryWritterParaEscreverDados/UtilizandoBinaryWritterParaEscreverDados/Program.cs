@@ -49,8 +49,9 @@ namespace UtilizandoBinaryWritterParaEscreverDados
                 foreach (byte b in byteArrayRead)
                     Console.Write("{0} ", b);
                 Console.Write(" float: {0} char: {1} ", floatRead, charRead);
-                Console.ReadKey();
+               
             }
+            Console.ReadKey();
         }
     }
 }

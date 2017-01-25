@@ -53,6 +53,23 @@ namespace EscrevendoEmBytes
             Console.WriteLine();
         }
 
-     
+        private void button4_Click(object sender, EventArgs e)
+        {
+            using (FileStream input = File.OpenRead("Eureka.txt"))
+            using (BinaryReader reader = new BinaryReader(input))
+            {
+                int intRead = reader.ReadInt32();
+                string stringRead = reader.ReadString();
+                byte[] byteArrayRead = reader.ReadBytes(4);
+                float floatRead = reader.ReadSingle();
+                char charRead = reader.ReadChar();
+
+                Console.Write("int: {0} string: {1} bytes: ", intRead, stringRead);
+                foreach (byte b in byteArrayRead)
+                    Console.Write("{0}",b);
+                Console.Write("float: {0} char: {1} ", floatRead, charRead);
+            }
+            Console.ReadKey();
+        }
     }
 }
