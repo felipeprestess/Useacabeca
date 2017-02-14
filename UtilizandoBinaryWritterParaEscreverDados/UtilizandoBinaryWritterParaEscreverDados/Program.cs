@@ -42,7 +42,7 @@ namespace UtilizandoBinaryWritterParaEscreverDados
                 int intRead = reader.ReadInt32();
                 string stringRead = reader.ReadString();
                 byte[] byteArrayRead = reader.ReadBytes(4);
-                float floatRead = reader.ReadSingle();
+                 float floatRead = reader.ReadSingle();
                 char charRead = reader.ReadChar();
 
                 Console.Write("int: {0} string: {1} bytes: ", intRead, stringRead);
