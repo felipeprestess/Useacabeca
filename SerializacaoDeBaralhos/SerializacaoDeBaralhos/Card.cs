@@ -33,7 +33,7 @@ namespace SerializacaoDeBaralhos
                 return value.ToString() + "s";
         }
     }
-
+    [Serializable]
     enum Values
     {
         Ace = 1,
@@ -50,7 +50,7 @@ namespace SerializacaoDeBaralhos
         Queen = 12,
         King = 13,
     }
-
+    [Serializable]
     enum Suits
     {
         Spades,
