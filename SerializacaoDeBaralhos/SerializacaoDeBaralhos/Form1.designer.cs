@@ -45,6 +45,11 @@
             this.btnCompareDados = new System.Windows.Forms.Button();
             this.btnThreeOfClubs = new System.Windows.Forms.Button();
             this.btnSixOfHearts = new System.Windows.Forms.Button();
+            this.btnDespejo = new System.Windows.Forms.Button();
+            this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
+            this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
+            this.button5 = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // listHand
@@ -225,11 +230,49 @@
             this.btnSixOfHearts.UseVisualStyleBackColor = true;
             this.btnSixOfHearts.Click += new System.EventHandler(this.btnSixOfHearts_Click);
             // 
+            // btnDespejo
+            // 
+            this.btnDespejo.Location = new System.Drawing.Point(860, 683);
+            this.btnDespejo.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnDespejo.Name = "btnDespejo";
+            this.btnDespejo.Size = new System.Drawing.Size(112, 35);
+            this.btnDespejo.TabIndex = 17;
+            this.btnDespejo.Text = "Despejo";
+            this.btnDespejo.UseVisualStyleBackColor = true;
+            this.btnDespejo.Click += new System.EventHandler(this.btnDespejo_Click);
+            // 
+            // openFileDialog
+            // 
+            this.openFileDialog.FileName = "openFileDialog";
+            // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(571, 685);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(88, 33);
+            this.button5.TabIndex = 18;
+            this.button5.Text = "Open";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
+            // button6
+            // 
+            this.button6.Location = new System.Drawing.Point(681, 685);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(88, 33);
+            this.button6.TabIndex = 19;
+            this.button6.Text = "Save As";
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1011, 700);
+            this.ClientSize = new System.Drawing.Size(1007, 749);
+            this.Controls.Add(this.button6);
+            this.Controls.Add(this.button5);
+            this.Controls.Add(this.btnDespejo);
             this.Controls.Add(this.btnSixOfHearts);
             this.Controls.Add(this.btnThreeOfClubs);
             this.Controls.Add(this.btnCompareDados);
@@ -251,7 +294,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Form1";
-            this.Text = "Go Fish!";
+            this.Text = "v";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -276,6 +319,11 @@
         private System.Windows.Forms.Button btnCompareDados;
         private System.Windows.Forms.Button btnThreeOfClubs;
         private System.Windows.Forms.Button btnSixOfHearts;
+        private System.Windows.Forms.Button btnDespejo;
+        private System.Windows.Forms.OpenFileDialog openFileDialog;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button button6;
     }
 }
 

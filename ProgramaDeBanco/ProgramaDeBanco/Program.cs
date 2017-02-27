@@ -3,6 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Runtime.Serialization;
+using System.IO;
+using System.Xml;
+using System.Text;
 
 namespace ProgramaDeBanco
 {
@@ -17,6 +21,8 @@ namespace ProgramaDeBanco
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form1());
+
+            
         }
     }
 }
