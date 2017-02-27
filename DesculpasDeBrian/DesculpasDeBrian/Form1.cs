@@ -64,8 +64,8 @@ namespace DesculpasDeBrian
                 return;
             }
             saveFileDialog.InitialDirectory = selectedFolder;
-            saveFileDialog.Filter = "Text Files (*.txt)|*.txt|All files (*.*)|*.*";
-            saveFileDialog.FileName = description.Text + ".txt";
+            saveFileDialog.Filter = "Excuse Files (*.excuse)|*.excuse|All files (*.*)|*.*";
+            saveFileDialog.FileName = description.Text + ".excuse";
             DialogResult res = saveFileDialog.ShowDialog();
             if (res == DialogResult.OK)
             {
@@ -81,7 +81,7 @@ namespace DesculpasDeBrian
             if (CheckChanged())
             {
                 openFile.InitialDirectory = selectedFolder;
-                openFile.Filter = "Text Files (*.txt)|*.txt|All files (*.*)|*.*";
+                openFile.Filter = "Excuse Files (*.excuse)|*.excuse|All files (*.*)|*.*";
                 openFile.FileName = description.Text + ".txt";
                 DialogResult result = openFile.ShowDialog();
                 if(result == DialogResult.OK)
