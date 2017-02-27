@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace SerializacaoDeBaralhos
 {
+    [Serializable]
     class CardComparer_byValue : IComparer<Card>
     {
         public int Compare(Card x, Card y)
