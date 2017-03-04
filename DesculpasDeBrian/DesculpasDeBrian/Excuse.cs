@@ -22,7 +22,7 @@ namespace DesculpasDeBrian
         }
         public Excuse(Random random, string folder)
         {
-            string[] fileNames = Directory.GetFiles(folder,".excuse");
+            string[] fileNames = Directory.GetFiles(folder,"*.excuse");
             OpenFile(fileNames[random.Next(fileNames.Length)]);
         }
         

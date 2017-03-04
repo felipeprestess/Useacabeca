@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using System.Runtime.Serialization;
 
 namespace DesculpasDeBrian
 {
@@ -82,7 +83,7 @@ namespace DesculpasDeBrian
             {
                 openFile.InitialDirectory = selectedFolder;
                 openFile.Filter = "Excuse Files (*.excuse)|*.excuse|All files (*.*)|*.*";
-                openFile.FileName = description.Text + ".txt";
+                openFile.FileName = description.Text + ".excuse";
                 DialogResult result = openFile.ShowDialog();
                 if(result == DialogResult.OK)
                 {
@@ -124,10 +125,33 @@ namespace DesculpasDeBrian
 
         private void btnRandom_Click(object sender, EventArgs e)
         {
-            if (CheckChanged())
+            string[] fileNames = Directory.GetFiles(selectedFolder, "*.excuse");
+            if(fileNames.Length == 0)
             {
-                currentExcuse = new Excuse(random, selectedFolder);
-                UpdateForm(false);
+                MessageBox.Show("Please specify a folder with excuse files int it",
+                    "No excuse files found");
+            }
+            else
+            {
+                try
+                {
+                    if (CheckChanged() == true)
+                        currentExcuse = new Excuse(random, selectedFolder);
+                }
+                catch (SerializationException)
+                {
+                    currentExcuse = new Excuse();
+                    currentExcuse.Description = "";
+                    currentExcuse.Results = "";
+                    currentExcuse.LastUsed = DateTime.Now;
+                    MessageBox.Show(
+                        "Your excuse file was invalid",
+                        "Unable to open a random excuse");
+                }
+                finally
+                {
+                    UpdateForm(false);
+                }
             }
         }
     }
