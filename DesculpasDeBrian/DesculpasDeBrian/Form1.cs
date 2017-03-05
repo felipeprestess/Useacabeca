@@ -87,8 +87,36 @@ namespace DesculpasDeBrian
                 DialogResult result = openFile.ShowDialog();
                 if(result == DialogResult.OK)
                 {
-                    currentExcuse = new Excuse(openFile.FileName);
-                    UpdateForm(false);
+                    bool clearForm = false;
+                    try
+                    {
+                        currentExcuse = new Excuse(openFile.FileName);
+                        try
+                        {
+                            UpdateForm(false);
+                        }
+                    catch (ArgumentOutOfRangeException)
+                        {
+                            MessageBox.Show(string.Format("The excuse file '{0}' is invalid", openFile.FileName),"Unable to open the excuse");
+                            clearForm = true;
+                        }
+                       
+                    }
+                    catch (SerializationException ex)
+                    {
+                        MessageBox.Show(string.Format("An error occured while opening the excuse '{0}'\n {1}",openFile.FileName,ex.Message),"Unable to open the excuse",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                        clearForm = true;
+                    }
+                    finally
+                    {
+                        if (clearForm)
+                        {
+                            description.Text = "";
+                            results.Text = "";
+                            lastUsed.Value = DateTime.Now;
+                        }
+                    }
+                    
                 }
             }
 
