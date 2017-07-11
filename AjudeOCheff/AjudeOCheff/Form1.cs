@@ -33,13 +33,9 @@ namespace AjudeOCheff
         private void useIngredient_Click(object sender, EventArgs e)
         {
             if (ingredientMethod != null)
-            {
                 Console.WriteLine(string.Format("I'll add {0}",ingredientMethod((int)amount.Value)));
-            }
             else
-            {
                 Console.WriteLine("I don't have a secret ingredient!");
-            }
         }
     }
 }
