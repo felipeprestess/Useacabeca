@@ -4,9 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.IO;
+using System.Runtime.Serialization.Formatters.Binary;
 
 namespace DesculpasDeBrian
 {
+    [Serializable]
     class Excuse
     {
         
@@ -20,7 +22,7 @@ namespace DesculpasDeBrian
         }
         public Excuse(Random random, string folder)
         {
-            string[] fileNames = Directory.GetFiles(folder,".txt");
+            string[] fileNames = Directory.GetFiles(folder,"*.excuse");
             OpenFile(fileNames[random.Next(fileNames.Length)]);
         }
         
@@ -31,22 +33,31 @@ namespace DesculpasDeBrian
 
         public void OpenFile(string excusePath)
         {
-            ExcusePath = excusePath;
-            using (StreamReader reader = new StreamReader(excusePath))
+            this.ExcusePath = excusePath;
+            Excuse tempExcuse;
+            BinaryFormatter ft = new BinaryFormatter();
+            using (Stream input = File.OpenRead(excusePath))
             {
-                Description = reader.ReadLine();
-                Results = reader.ReadLine();
-                LastUsed = Convert.ToDateTime(reader.ReadLine());
+                tempExcuse = (Excuse)ft.Deserialize(input);
             }
+            Description = tempExcuse.Description;
+            Results = tempExcuse.Results;
+            LastUsed = tempExcuse.LastUsed;
         }
 
         public void Save(string fileName)
         {
-            using (StreamWriter swriter = new StreamWriter(fileName))
+            //using (StreamWriter swriter = new StreamWriter(fileName))
+            //{
+            //    swriter.WriteLine(Description);
+            //    swriter.WriteLine(Results);
+            //    swriter.WriteLine(LastUsed);
+            //}
+
+            using (Stream fileOutput = File.OpenWrite(fileName))
             {
-                swriter.WriteLine(Description);
-                swriter.WriteLine(Results);
-                swriter.WriteLine(LastUsed);
+                BinaryFormatter ft = new BinaryFormatter();
+                ft.Serialize(fileOutput, this);
             }
         }
     }

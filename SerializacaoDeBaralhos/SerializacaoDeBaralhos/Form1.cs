@@ -16,6 +16,8 @@ namespace SerializacaoDeBaralhos
     {
         private Game game;
         Random random = new Random();
+        Card card;
+        string filePath = string.Empty;
         public Form1()
         {
             InitializeComponent();
@@ -90,19 +92,12 @@ namespace SerializacaoDeBaralhos
         private void button1_Click(object sender, EventArgs e)
         {
             Deck deckToWrite = RandomDeck(5);
-            using (Stream output = File.Create("three-c.dat"))
+            using (Stream output = File.Create("Deck1.dat"))
             {
                 BinaryFormatter bf = new BinaryFormatter();
                 bf.Serialize(output, deckToWrite);
             }
-
-            using (Stream output = File.Create("six-h.dat"))
-            {
-                BinaryFormatter bf = new BinaryFormatter();
-                bf.Serialize(output, deckToWrite);
-            }
-
-            
+            DealCards(deckToWrite, "What I just wrote to the file");
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -111,20 +106,21 @@ namespace SerializacaoDeBaralhos
             {
                 BinaryFormatter bf = new BinaryFormatter();
                 Deck deckFromFile = (Deck)bf.Deserialize(input);
-                DealCards(deckFromFile, "What I rad from the file");
+                DealCards(deckFromFile, "What I read from the file");
             }
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            using (Stream output = File.Create("Deck2.dat"))
+            
+            using (Stream outputThree = File.Create("three-c.dat"))
             {
                 BinaryFormatter bf = new BinaryFormatter();
 
                 for (int i = 1; i <= 5; i++)
                 {
                     Deck deckToWrite = RandomDeck(random.Next(1, 10));
-                    bf.Serialize(output, deckToWrite);
+                    bf.Serialize(outputThree, deckToWrite);
                     DealCards(deckToWrite, "Deck #" + i + " written");
                 }
             }
@@ -132,8 +128,7 @@ namespace SerializacaoDeBaralhos
 
         private void button4_Click(object sender, EventArgs e)
         {
-            using (Stream input = File.OpenRead("Deck2.dat"))
-            {
+            using (Stream input = File.OpenRead("Deck2.dat")) { 
                 BinaryFormatter bf = new BinaryFormatter();
                 for (int i = 1; i <= 5; i++)
                 {
@@ -151,7 +146,84 @@ namespace SerializacaoDeBaralhos
             for (int i = 0; i < firstFile.Length; i++)
                 if (firstFile[i] != secondFile[i])
                     Console.WriteLine("Byte #{0}: {1} versus {2}", i, firstFile[i], secondFile[i]);
-            
+
+            firstFile[307] = (byte)Suits.Spades;
+            secondFile[364] = (byte)Values.King;
+            File.Delete("king-s.dat");
+            File.WriteAllBytes("king-s.dat", firstFile);
+
+            using(Stream input = File.OpenRead("king-s.dat"))
+            {
+                BinaryFormatter ft = new BinaryFormatter();
+                card = (Card)ft.Deserialize(input);
+                Console.WriteLine(card);
+            }
+
+        }
+
+        private void btnThreeOfClubs_Click(object sender, EventArgs e)
+        {
+            Card threeOfClubs = new Card(Suits.Clubs, Values.Three);
+            using(Stream outputThree = File.Create("three-c.dat"))
+            {
+                BinaryFormatter formatter = new BinaryFormatter();
+                formatter.Serialize(outputThree, threeOfClubs);
+            }
+        }
+
+        private void btnSixOfHearts_Click(object sender, EventArgs e)
+        {
+            Card sixOfHearts = new Card(Suits.Hearts, Values.Six);
+            using (Stream outputSix = File.Create("six-h.dat"))
+            {
+                BinaryFormatter formatter = new BinaryFormatter();
+                formatter.Serialize(outputSix, sixOfHearts);
+            }
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            openFileDialog.ShowDialog();
+            filePath = openFileDialog.FileName;
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            saveFileDialog.ShowDialog();
+            filePath = saveFileDialog.FileName;
+        }
+
+        private void btnDespejo_Click(object sender, EventArgs e)
+        {
+            using (StreamReader reader = new StreamReader(filePath))
+            using (StreamWriter writer = new StreamWriter(@"c:\files\output.txt",false))
+            {
+                int position = 0;
+
+                while (!reader.EndOfStream)
+                {
+                    char[] buffer = new char[16];
+                    int charactersRead = reader.ReadBlock(buffer, 0, 16);
+                    writer.Write("{0}: ", string.Format("{0:x4}", position));
+                    position += charactersRead;
+
+                    for (int i = 0; i < 16; i++)
+                    {
+                        if (i < charactersRead)
+                        {
+                            string hex = string.Format("{0:x2}", (byte)buffer[i]);
+                            writer.Write(hex + " ");
+                        }
+                        else
+                            writer.Write(" ");
+
+                        if (i == 7) { writer.Write("-- "); }
+                        if (buffer[i] < 32 || buffer[i] > 250) { buffer[i] = '.'; }
+                    }
+                    string bufferContents = new string(buffer);
+                    writer.WriteLine(" " + bufferContents.Substring(0, charactersRead));
+                }
+            }
         }
     }
 }
