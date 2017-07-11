@@ -10,7 +10,7 @@ namespace AprendendoEventos
     {
         public Pitcher(Ball ball)
         {
-            ball.BallInPlay += new EventHandler(Ball_BallInPlay);
+            ball.BallInPlay += Ball_BallInPlay;
         }
 
         private void Ball_BallInPlay(object sender, EventArgs e)

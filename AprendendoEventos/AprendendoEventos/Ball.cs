@@ -8,11 +8,11 @@ namespace AprendendoEventos
 {
     class Ball
     {
-        public event EventHandler BallInPlay;
+        public event EventHandler<BallEventArgs> BallInPlay;
         
         public void OnBallInPlay(BallEventArgs e)
         {
-            EventHandler ballInPlay = BallInPlay;
+            EventHandler<BallEventArgs> ballInPlay = BallInPlay;
             if (ballInPlay != null)
                 ballInPlay(this, e);
         }
