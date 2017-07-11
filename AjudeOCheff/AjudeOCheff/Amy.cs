@@ -8,11 +8,11 @@ namespace AjudeOCheff
 {
     class Amy
     {
-        public GetSecretIngredient AmysSecretIngredientMethod { get { return new GetSecretIngredient(AmysSecretIngredientMethod); } }
-        private string GetSecretIngredient(int amount)
+        public GetSecretIngredient AmysSecretIngredientMethod { get { return new GetSecretIngredient(AmysSecretIngredient); } }
+        private string AmysSecretIngredient(int amount)
         {
             if (amount < 10)
-                return amount.ToString();
+                return string.Format("{0} cans of sardines -- you need more!", amount.ToString());
             else
                 return string.Format("{0} cans of sardines",amount.ToString());
         }
