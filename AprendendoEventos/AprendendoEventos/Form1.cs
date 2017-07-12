@@ -24,8 +24,9 @@ namespace AprendendoEventos
 
         private void button1_Click(object sender, EventArgs e)
         {
+            Bat bat = ball.GetNewBat();
             BallEventArgs ballEventArgs = new BallEventArgs((int)numericUpDown1.Value, (int)numericUpDown2.Value);
-            ball.OnBallInPlay(ballEventArgs);
+            bat.HitTheBall(ballEventArgs);
         }
     }
 }
