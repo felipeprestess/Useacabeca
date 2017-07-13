@@ -19,6 +19,15 @@ namespace BeeControl_on_a_form
             BackgroundImageLayout = ImageLayout.Stretch;
         }
 
+        protected override void Dispose(bool disposing)
+        {
+            base.Dispose(disposing);
+            if (disposing)
+            {
+                animationTimer.Dispose();
+            }
+        }
+
         private int cell = 0;
         private void animationTimer_Tick(object sender, EventArgs e)
         {

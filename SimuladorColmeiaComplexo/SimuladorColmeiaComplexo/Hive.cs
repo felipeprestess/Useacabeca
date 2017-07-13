@@ -25,10 +25,10 @@ namespace SimuladorColmeiaComplexo
         public void InitializeLocations()
         {
             locations = new Dictionary<string, Point>();
-            locations.Add("Entrada", new Point(600, 100));
-            locations.Add("Berçário", new Point(95, 174));
-            locations.Add("Fábrica de Mel", new Point(157, 98));
-            locations.Add("Saída", new Point(194, 213));
+            locations.Add("Entrada", new Point(597, 120));
+            locations.Add("Berçário", new Point(86, 146));
+            locations.Add("Fábrica de Mel", new Point(173, 74));
+            locations.Add("Saída", new Point(206, 181));
         }
 
         public Point GetLocation(string location)

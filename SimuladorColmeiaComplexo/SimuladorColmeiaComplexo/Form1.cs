@@ -14,6 +14,9 @@ namespace SimuladorColmeiaComplexo
 {
     public partial class Form1 : Form
     {
+        private HiveForm hiveForm = new HiveForm();
+        private FieldForm fieldForm = new FieldForm();
+        private Renderer renderer;
         World world;
         private Random random = new Random();
         private DateTime start = DateTime.Now;
@@ -22,7 +25,10 @@ namespace SimuladorColmeiaComplexo
         public Form1()
         {
             InitializeComponent();
-            world = new World(new BeeMessage(SendMessage));
+            MoveChildForms();
+            hiveForm.Show(this);
+            fieldForm.Show(this);
+            ResetSimulator();
 
             timer1.Interval = 50;
             timer1.Tick += new EventHandler(RunFrame);
@@ -30,10 +36,24 @@ namespace SimuladorColmeiaComplexo
             UpdateStats(new TimeSpan());
         }
 
+        private void ResetSimulator()
+        {
+            framesRun = 0;
+            world = new World(new BeeMessage(SendMessage)); // mover esse código
+            renderer = new Renderer(world, hiveForm, fieldForm);
+        }
+
+        private void MoveChildForms()
+        {
+            hiveForm.Location = new Point(Location.X + Width + 10, Location.Y);
+            fieldForm.Location = new Point(Location.X, Location.Y + Math.Max(Height, hiveForm.Height));
+        }
+
         private void RunFrame(object sender, EventArgs e)
         {
             framesRun++;
             world.Go(random);
+            renderer.Render();
             end = DateTime.Now;
             TimeSpan framesDuration = end - start;
             start = end;
@@ -76,8 +96,8 @@ namespace SimuladorColmeiaComplexo
 
         private void Reset_Click(object sender, EventArgs e)
         {
-            framesRun = 0;
-            world = new World(new BeeMessage(SendMessage));
+            renderer.Reset();
+            ResetSimulator();
             if (!timer1.Enabled)
                 toolStrip1.Items[0].Text = "Start Simulation";
         }
@@ -149,6 +169,9 @@ namespace SimuladorColmeiaComplexo
                 bee.MessageSender = new BeeMessage(SendMessage);
             if (enable)
                 timer1.Start();
+
+            renderer.Reset();
+            renderer = new Renderer(world, hiveForm, fieldForm);
         }
 
         private void salvarToolStripButton_Click(object sender, EventArgs e)
@@ -184,6 +207,11 @@ namespace SimuladorColmeiaComplexo
         private void imprimirToolStripButton_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void Form1_Move(object sender, EventArgs e)
+        {
+            MoveChildForms();
         }
     }
 }
