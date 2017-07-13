@@ -36,6 +36,10 @@
             this.StartSimulation = new System.Windows.Forms.ToolStripLabel();
             this.Reset = new System.Windows.Forms.ToolStripLabel();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.abrirToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.salvarToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.imprimirToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator = new System.Windows.Forms.ToolStripSeparator();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.FramesRate = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
@@ -50,10 +54,6 @@
             this.Bees = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.listBox1 = new System.Windows.Forms.ListBox();
-            this.abrirToolStripButton = new System.Windows.Forms.ToolStripButton();
-            this.salvarToolStripButton = new System.Windows.Forms.ToolStripButton();
-            this.imprimirToolStripButton = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator = new System.Windows.Forms.ToolStripSeparator();
             this.statusStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -110,6 +110,41 @@
             this.toolStrip1.TabIndex = 1;
             this.toolStrip1.Text = "toolStrip1";
             // 
+            // abrirToolStripButton
+            // 
+            this.abrirToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.abrirToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("abrirToolStripButton.Image")));
+            this.abrirToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.abrirToolStripButton.Name = "abrirToolStripButton";
+            this.abrirToolStripButton.Size = new System.Drawing.Size(28, 28);
+            this.abrirToolStripButton.Text = "&Abrir";
+            this.abrirToolStripButton.Click += new System.EventHandler(this.abrirToolStripButton_Click);
+            // 
+            // salvarToolStripButton
+            // 
+            this.salvarToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.salvarToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("salvarToolStripButton.Image")));
+            this.salvarToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.salvarToolStripButton.Name = "salvarToolStripButton";
+            this.salvarToolStripButton.Size = new System.Drawing.Size(28, 28);
+            this.salvarToolStripButton.Text = "&Salvar";
+            this.salvarToolStripButton.Click += new System.EventHandler(this.salvarToolStripButton_Click);
+            // 
+            // imprimirToolStripButton
+            // 
+            this.imprimirToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.imprimirToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("imprimirToolStripButton.Image")));
+            this.imprimirToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.imprimirToolStripButton.Name = "imprimirToolStripButton";
+            this.imprimirToolStripButton.Size = new System.Drawing.Size(28, 28);
+            this.imprimirToolStripButton.Text = "&Imprimir";
+            this.imprimirToolStripButton.Click += new System.EventHandler(this.imprimirToolStripButton_Click);
+            // 
+            // toolStripSeparator
+            // 
+            this.toolStripSeparator.Name = "toolStripSeparator";
+            this.toolStripSeparator.Size = new System.Drawing.Size(6, 31);
+            // 
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.ColumnCount = 2;
@@ -131,10 +166,10 @@
             this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 6;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 42.55319F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 57.44681F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 31F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 47.82609F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 52.17391F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 29F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 24F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 29F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 31F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(348, 160);
@@ -183,7 +218,7 @@
             // NectarInFlowers
             // 
             this.NectarInFlowers.AutoSize = true;
-            this.NectarInFlowers.Location = new System.Drawing.Point(194, 70);
+            this.NectarInFlowers.Location = new System.Drawing.Point(194, 75);
             this.NectarInFlowers.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.NectarInFlowers.Name = "NectarInFlowers";
             this.NectarInFlowers.Size = new System.Drawing.Size(125, 20);
@@ -193,7 +228,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(4, 70);
+            this.label7.Location = new System.Drawing.Point(4, 75);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(169, 20);
@@ -203,7 +238,7 @@
             // HoneyInHive
             // 
             this.HoneyInHive.AutoSize = true;
-            this.HoneyInHive.Location = new System.Drawing.Point(194, 39);
+            this.HoneyInHive.Location = new System.Drawing.Point(194, 46);
             this.HoneyInHive.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.HoneyInHive.Name = "HoneyInHive";
             this.HoneyInHive.Size = new System.Drawing.Size(100, 20);
@@ -213,7 +248,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(4, 39);
+            this.label5.Location = new System.Drawing.Point(4, 46);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(166, 20);
@@ -223,7 +258,7 @@
             // Flowers
             // 
             this.Flowers.AutoSize = true;
-            this.Flowers.Location = new System.Drawing.Point(194, 17);
+            this.Flowers.Location = new System.Drawing.Point(194, 22);
             this.Flowers.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Flowers.Name = "Flowers";
             this.Flowers.Size = new System.Drawing.Size(64, 20);
@@ -233,7 +268,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(4, 17);
+            this.label3.Location = new System.Drawing.Point(4, 22);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(73, 20);
@@ -246,7 +281,7 @@
             this.Bees.Location = new System.Drawing.Point(194, 0);
             this.Bees.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Bees.Name = "Bees";
-            this.Bees.Size = new System.Drawing.Size(46, 17);
+            this.Bees.Size = new System.Drawing.Size(46, 20);
             this.Bees.TabIndex = 1;
             this.Bees.Text = "Bees";
             // 
@@ -256,7 +291,7 @@
             this.label1.Location = new System.Drawing.Point(4, 0);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(55, 17);
+            this.label1.Size = new System.Drawing.Size(55, 20);
             this.label1.TabIndex = 0;
             this.label1.Text = "#Bees";
             // 
@@ -268,41 +303,6 @@
             this.listBox1.Name = "listBox1";
             this.listBox1.Size = new System.Drawing.Size(348, 164);
             this.listBox1.TabIndex = 3;
-            // 
-            // abrirToolStripButton
-            // 
-            this.abrirToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.abrirToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("abrirToolStripButton.Image")));
-            this.abrirToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.abrirToolStripButton.Name = "abrirToolStripButton";
-            this.abrirToolStripButton.Size = new System.Drawing.Size(28, 28);
-            this.abrirToolStripButton.Text = "&Abrir";
-            this.abrirToolStripButton.Click += new System.EventHandler(this.abrirToolStripButton_Click);
-            // 
-            // salvarToolStripButton
-            // 
-            this.salvarToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.salvarToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("salvarToolStripButton.Image")));
-            this.salvarToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.salvarToolStripButton.Name = "salvarToolStripButton";
-            this.salvarToolStripButton.Size = new System.Drawing.Size(28, 28);
-            this.salvarToolStripButton.Text = "&Salvar";
-            this.salvarToolStripButton.Click += new System.EventHandler(this.salvarToolStripButton_Click);
-            // 
-            // imprimirToolStripButton
-            // 
-            this.imprimirToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.imprimirToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("imprimirToolStripButton.Image")));
-            this.imprimirToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.imprimirToolStripButton.Name = "imprimirToolStripButton";
-            this.imprimirToolStripButton.Size = new System.Drawing.Size(28, 28);
-            this.imprimirToolStripButton.Text = "&Imprimir";
-            this.imprimirToolStripButton.Click += new System.EventHandler(this.imprimirToolStripButton_Click);
-            // 
-            // toolStripSeparator
-            // 
-            this.toolStripSeparator.Name = "toolStripSeparator";
-            this.toolStripSeparator.Size = new System.Drawing.Size(6, 31);
             // 
             // Form1
             // 
