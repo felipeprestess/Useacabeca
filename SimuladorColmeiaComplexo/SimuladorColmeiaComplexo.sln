@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26430.14
+VisualStudioVersion = 15.0.26430.13
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimuladorColmeiaComplexo", "SimuladorColmeiaComplexo\SimuladorColmeiaComplexo.csproj", "{8F097433-2923-466F-94AB-6ACFB7AA6894}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BeeControl on a form", "BeeControl on a form\BeeControl on a form.csproj", "{AAB44BFE-2882-480F-91B1-E474F27BED9B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{8F097433-2923-466F-94AB-6ACFB7AA6894}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8F097433-2923-466F-94AB-6ACFB7AA6894}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8F097433-2923-466F-94AB-6ACFB7AA6894}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AAB44BFE-2882-480F-91B1-E474F27BED9B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AAB44BFE-2882-480F-91B1-E474F27BED9B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AAB44BFE-2882-480F-91B1-E474F27BED9B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AAB44BFE-2882-480F-91B1-E474F27BED9B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

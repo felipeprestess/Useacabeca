@@ -19,6 +19,9 @@ namespace SimuladorColmeiaComplexo
         private const double MinHoneyRequired = 4.0;
         private const int MaxNumberBee = 8;
         private World world;
+
+        [NonSerialized]
+        public BeeMessage MessageSender;
         public void InitializeLocations()
         {
             locations = new Dictionary<string, Point>();
@@ -36,8 +39,9 @@ namespace SimuladorColmeiaComplexo
                 throw new ArgumentException(string.Format("Localização desconhecida: {0}", location));
         }
 
-        public Hive(World world)
+        public Hive(World world, BeeMessage MessageSender)
         {
+            this.MessageSender = MessageSender;
             this.world = world;
             Honey = AmountHoneyInitialize;
             InitializeLocations();
@@ -74,6 +78,7 @@ namespace SimuladorColmeiaComplexo
             Point startPoint = new Point(locations["Berçário"].X + r1,
                                          locations["Berçário"].Y + r2);
             Bee newBee = new Bee(beeCount, startPoint, this, world);
+            newBee.MessageSender += this.MessageSender;
             world.Bees.Add(newBee);
         }
 
